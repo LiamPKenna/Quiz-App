@@ -1,16 +1,10 @@
+// GLOBAL VARIABLES
 var currentQuestion = 0;
 var backgroundColorIndex = 0;
 var name = "";
 var done = false;
 
-const backgroundIncrementer = function() {
-  if (backgroundColorIndex === (backgroundColors.length - 1)) {
-    backgroundColorIndex = 0;
-  } else {
-    backgroundColorIndex += 1;
-  }
-}
-
+// FOR BACKGROUND COLOR CHANGES
 const backgroundColors = [
   "#6dbbe8",
   "#5cbd9e",
@@ -21,26 +15,28 @@ const backgroundColors = [
   "#8d5cbd",
   "#bd5c8d",
   "#bd5c6b"
-]
+];
 
-const optionButton = function(option) {
-  return `
-  <button value="${option.number}" type="button" class="btn btn-info mb-3 fork">${option.option}</button>
-  `;
-};
-
-const getLogo = function(answer) {
-  let choice = '';
-  if (answer.answer === "C#") {
-    choice = 'c-sharp';
+const backgroundIncrementer = function() {
+  if (backgroundColorIndex === (backgroundColors.length - 1)) {
+    backgroundColorIndex = 0;
   } else {
-    choice = answer.answer.toLowerCase();
+    backgroundColorIndex += 1;
   }
-  return `img/${choice}.png`
 }
 
+
+// TEMPLATING
 const answerBuilder = function(answer) {
-  done = true;
+  const getLogo = function(thisAnswer) {
+    let choice = '';
+    if (thisAnswer.answer === "C#") {
+      choice = 'c-sharp';
+    } else {
+      choice = thisAnswer.answer.toLowerCase();
+    }
+    return `img/${choice}.png`
+  }
   let logo = getLogo(answer);
   return `
   <h2 class="result">${name} should learn ${answer.answer}!</h2>
@@ -54,28 +50,46 @@ const answerBuilder = function(answer) {
   `;
 }
 
+const forkCardBuilder = function(thisQuestion) {
+  const optionButton = function(option) {
+    return `
+    <button value="${option.number}" type="button" class="btn btn-info mb-3 fork">${option.option}</button>
+    `;
+  };
+  return `
+  <h3>${thisQuestion.question}</h3>
+  <br><br>
+  ${thisQuestion.options.map(optionButton).join('')}
+  `
+}
+
+const yesNoBuilder = function(thisQuestion) {
+  return `
+  <h3>${thisQuestion.question}</h3>
+  <br><br>
+  <div class="y-n-wrap">
+  <button id="yes" type="button" class="btn btn-info y-n"><h2>YES</h2></button>
+  <button id="no" type="button" class="btn btn-info y-n"><h2>NO</h2></button>
+  </div>
+  `
+}
+
+
+// MAIN LOGIC
 const cardBuilder = function(questionIndex) {
   const thisQuestion = questions[questionIndex];
   if (thisQuestion.answer) {
+    done = true;
     return answerBuilder(thisQuestion);
   } else if (thisQuestion.forkFunction){
-    return `
-    <h3>${thisQuestion.question}</h3>
-    <br><br>
-    ${thisQuestion.options.map(optionButton).join('')}
-    `;
+    return forkCardBuilder(thisQuestion);
   } else {
-    return `
-    <h3>${thisQuestion.question}</h3>
-    <br><br>
-    <div class="y-n-wrap">
-    <button id="yes" type="button" class="btn btn-info y-n"><h2>YES</h2></button>
-    <button id="no" type="button" class="btn btn-info y-n"><h2>NO</h2></button>
-    </div>
-    `;
+    return yesNoBuilder(thisQuestion);
   }
 }
 
+
+// USER INTERFACE
 $(document).ready(function() {
 
   $(".question").on("click", "#yes", function() {
