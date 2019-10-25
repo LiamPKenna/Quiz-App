@@ -1,30 +1,48 @@
 const questions = [
   {
     number: 0,
-    question: "Do you want to learn a language with more rules (to prevent errors) or more flexibility?",
-    answerYes: 1,
+    question: "Do you want to learn a language with more rules (to prevent errors) rather than more flexibility?",
+    answerYes: 3,
     answerNo: 2
   },
   {
     number: 1,
-    question: "Do you want to make smartphone apps?",
-    answerYes: ,
-    answerNo:
+    question: "Do you want to start over?",
+    answerYes: 0,
+    answerNo: 0
   },
   {
     number: 2,
-    question: "What do you want to be able to do",
+    question: "What do you want to be able to do?",
     answerFunction: function(number) {
       if (number === 1) {
         return 7;
       } else if (number === 2) {
         return 8;
       } else if (number === 3) {
-        return 'python';
+        return 9;
       } else {
-        return 'ruby';
+        return 10;
       }
-    };
+    },
+    options: [
+      {
+        option: "Work with scripts like Wordpress",
+        number: 1
+      },
+      {
+        option: "Create code that runs in the browser and maybe a little sever-sede work",
+        number: 2
+      },
+      {
+        option: "Just want a clear and general purpose language",
+        number: 3
+      },
+      {
+        option: "Create websites like AirBNB or Twitter",
+        number: 4
+      },
+    ]
   },
   {
     number: 3,
