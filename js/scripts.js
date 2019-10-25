@@ -112,7 +112,7 @@ $(document).ready(function() {
 
   $(".question").on("click", ".btn", function() {
     backgroundIncrementer();
-    $("body").css("background-color", backgroundColors[backgroundColorIndex]);
+    $(".wrap").css("background-color", backgroundColors[backgroundColorIndex]);
     if (done) {
       $(".logo").fadeIn(1000);
     }

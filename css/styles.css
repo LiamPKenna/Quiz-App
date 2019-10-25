@@ -1,6 +1,12 @@
+.wrap {
+  background-color: #6dbbe8;
+  border-radius: 10px;
+  padding: 20px;
+}
+
 .heading {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 10px;
   margin-bottom: 50px;
   max-width: 500px;
 }
@@ -49,6 +55,9 @@ button#no {
 
 body {
   background-color: #6dbbe8;
+  background-repeat: no-repeat;
+  background-image: url('../img/blur-code.jpg');
+  background-size: 100% auto;
 }
 
 .logo {
