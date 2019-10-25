@@ -15,7 +15,7 @@ const questions = [
     number: 1,
     question: "Do you want to learn a language with more rules (to prevent errors) rather than more flexibility?",
     answerYes: 3,
-    answerNo: 2
+    answerNo: 16
   },
   {
     number: 2,
@@ -28,10 +28,6 @@ const questions = [
       {
         option: "Create code that runs in the browser",
         number: 2
-      },
-      {
-        option: "To learn a clear and general purpose language",
-        number: 3
       },
       {
         option: "Create websites like AirBNB or Twitter",
@@ -54,7 +50,7 @@ const questions = [
   {
     number: 5,
     answer: "Java",
-    answerText: "It's a language that can be run 'anywhere' and is the language of Android. (Swift could be a good choice as well)"
+    answerText: "It's a language that can be run 'anywhere' and is the language of Android."
   },
   {
     number: 6,
@@ -90,13 +86,13 @@ const questions = [
   {
     number: 12,
     question: "Are you excited about working fast, even if it leads to more errors?",
-    answerYes: 2,
+    answerYes: 16,
     answerNo: 1
   },
   {
     number: 13,
     question: "Are you excited about working fast and flexible, even if it makes it harder to work for a big company?",
-    answerYes: 2,
+    answerYes: 16,
     answerNo: 3
   },
   {
@@ -109,5 +105,35 @@ const questions = [
     number: 15,
     answer: "Swift",
     answerText: "It is Apple's newest language and the perfect tool for developing iOS apps."
+  },
+  {
+    number: 16,
+    question: "Are you more excited about building web apps than working on server-side programming?",
+    answerYes: 2,
+    answerNo: 18
+  },
+  {
+    number: 17,
+    question: "What do you most want to be able to do?",
+    options: [
+      {
+        option: "Create full stack apps with a single language",
+        number: 2
+      },
+      {
+        option: "To learn a clear and general purpose language",
+        number: 3
+      },
+      {
+        option: "Create websites like AirBNB or Twitter",
+        number: 4
+      },
+    ]
+  },
+  {
+    number: 18,
+    question: "Do you dream of working in Big data?",
+    answerYes: 9,
+    answerNo: 17
   },
 ]
