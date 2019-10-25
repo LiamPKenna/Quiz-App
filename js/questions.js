@@ -20,7 +20,7 @@ const questions = [
   {
     number: 2,
     question: "What do you most want to be able to do?",
-    answerFunction: function(number) {
+    forkFunction: function(number) {
       if (number === 1) {
         return 7;
       } else if (number === 2) {

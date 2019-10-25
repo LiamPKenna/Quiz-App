@@ -39,7 +39,7 @@ const answerBuilder = function(answer) {
   done = true;
   let logo = getLogo(answer);
   return `
-  <h2>${name} should learn ${answer.answer}!</h2>
+  <h2 class="result">${name} should learn ${answer.answer}!</h2>
   <h4>${answer.answerText}</h4>
   <br>
   <button type="button" class="btn btn-info start"><h2>START OVER</h2></button>
@@ -54,7 +54,7 @@ const cardBuilder = function(questionIndex) {
   const thisQuestion = questions[questionIndex];
   if (thisQuestion.answer) {
     return answerBuilder(thisQuestion);
-  } else if (thisQuestion.answerFunction){
+  } else if (thisQuestion.forkFunction){
     return `
     <h3>${thisQuestion.question}</h3>
     <br><br>
@@ -64,21 +64,23 @@ const cardBuilder = function(questionIndex) {
     return `
     <h3>${thisQuestion.question}</h3>
     <br><br>
+    <div class="y-n-wrap">
     <button id="yes" type="button" class="btn btn-info y-n"><h2>YES</h2></button>
     <button id="no" type="button" class="btn btn-info y-n"><h2>NO</h2></button>
+    </div>
     `;
   }
 }
 
 $(document).ready(function() {
 
-  $(".question").on("click", "#yes", function(event) {
+  $(".question").on("click", "#yes", function() {
     $(".question").text('');
     $(".question").append(cardBuilder(questions[currentQuestion].answerYes));
     currentQuestion = questions[currentQuestion].answerYes;
   });
 
-  $(".question").on("click", "#no", function(event) {
+  $(".question").on("click", "#no", function() {
     $(".question").text('');
     $(".question").append(cardBuilder(questions[currentQuestion].answerNo));
     currentQuestion = questions[currentQuestion].answerNo;
@@ -87,7 +89,7 @@ $(document).ready(function() {
   $(".question").on("click", ".fork", function(event) {
     $(".question").text('');
     let forkNumber = parseInt($(event.target).val());
-    $(".question").append(cardBuilder(questions[currentQuestion].answerFunction(forkNumber)));
+    $(".question").append(cardBuilder(questions[currentQuestion].forkFunction(forkNumber)));
     currentQuestion = questions[currentQuestion].answerNo;
   });
 
