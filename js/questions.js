@@ -121,7 +121,7 @@ const questions = [
         number: 2
       },
       {
-        option: "To learn a clear and general purpose language",
+        option: "Use a clear and general purpose language",
         number: 3
       },
       {
