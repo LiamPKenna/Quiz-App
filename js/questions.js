@@ -108,7 +108,7 @@ const questions = [
   },
   {
     number: 16,
-    question: "Are you more excited about building web apps than working on server-side programming?",
+    question: "Are you more excited about building web apps than other types of programming?",
     answerYes: 2,
     answerNo: 18
   },

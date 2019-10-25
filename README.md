@@ -1,12 +1,12 @@
 # _Programming Language Selector_
 
-#### _A simple web application to suggest a language based on results of a quiz, October 25th 2019_
+#### _Web application that suggests a programming language based on results of a quiz, October 25th 2019_
 
 #### By _**Liam Kenna**_
 
 ## Description
 
-_This site includes a simple web application to suggest a language based on results of a quiz_
+_This site is a simple web application that asks users to input their name and answer a number of questions before suggesting a programming language for them to learn. Content for the questions was built from the picture on this page: https://www.learneroo.com/modules/12/nodes/94_
 
 ## Setup/Installation Requirements
 
