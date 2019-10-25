@@ -1,12 +1,12 @@
-# _!!!!_
+# _Programming Language Selector_
 
-#### _!!!!, October 25th 2019_
+#### _A simple web application to suggest a language based on results of a quiz, October 25th 2019_
 
 #### By _**Liam Kenna**_
 
 ## Description
 
-_This site includes !!!!_
+_This site includes a simple web application to suggest a language based on results of a quiz_
 
 ## Setup/Installation Requirements
 
