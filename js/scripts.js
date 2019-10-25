@@ -7,13 +7,25 @@ const optionButton = function(option) {
   `;
 };
 
+const getLogo = function(ans) {
+  console.log(ans);
+  let choice = '';
+  if (ans.answer === "C#") {
+    choice = 'c-sharp';
+  } else {
+    choice = ans.answer.toLowerCase();
+  }
+  return `img/${choice}.png`
+}
+
 const answerBuilder = function(answer) {
+  console.log(answer);
+  let logo = getLogo(answer);
   return `
   <h2>${name} should learn ${answer.answer}!</h2>
-  <br><br>
   <h4>${answer.answerText}</h4>
-  <br><br>
   <button type="button" class="btn btn-info start"><h2>START OVER</h2></button>
+  <img src="${logo}" alt="${answer.answer}" class="logo">
   `;
 }
 

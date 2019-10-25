@@ -39,10 +39,19 @@ button#no {
   width: 100%;
 }
 
+.start {
+  margin-bottom: 10px;
+}
+
 #name {
   margin-bottom: 100px;
 }
 
 body {
   background-color: #6dbbe8;
+}
+
+.logo {
+  max-width: 100px;
+  margin: 0 auto;
 }
