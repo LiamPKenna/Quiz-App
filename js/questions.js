@@ -74,7 +74,7 @@ const questions = [
   {
     number: 8,
     answer: "JavaScript",
-    answerText: "Is run all over the place and is the native language of the web. With the increasing popularity of Node.js, it is showing up in more and more places."
+    answerText: "It's run all over the place and is the native language of the web. With the increasing popularity of Node.js, it is showing up in more and more places."
   },
   {
     number: 9,
