@@ -20,17 +20,6 @@ const questions = [
   {
     number: 2,
     question: "What do you most want to be able to do?",
-    forkFunction: function(number) {
-      if (number === 1) {
-        return 7;
-      } else if (number === 2) {
-        return 8;
-      } else if (number === 3) {
-        return 9;
-      } else {
-        return 10;
-      }
-    },
     options: [
       {
         option: "Work with scripts like Wordpress",
@@ -41,7 +30,7 @@ const questions = [
         number: 2
       },
       {
-        option: "Just want a clear and general purpose language",
+        option: "To learn a clear and general purpose language",
         number: 3
       },
       {
@@ -53,7 +42,7 @@ const questions = [
   {
     number: 3,
     question: "Do you want to make smartphone apps?",
-    answerYes: 5,
+    answerYes: 14,
     answerNo: 4
   },
   {
@@ -80,7 +69,7 @@ const questions = [
   {
     number: 8,
     answer: "JavaScript",
-    answerText: "It's run all over the place and is the native language of the web. With Node.js, it is everywhere."
+    answerText: "It's run all over the place and is the native language of the web."
   },
   {
     number: 9,
@@ -109,5 +98,16 @@ const questions = [
     question: "Are you excited about working fast and flexible, even if it makes it harder to work for a big company?",
     answerYes: 2,
     answerNo: 3
+  },
+  {
+    number: 14,
+    question: "Are you mostly wanting to work on iOS apps?",
+    answerYes: 15,
+    answerNo: 5
+  },
+  {
+    number: 15,
+    answer: "Swift",
+    answerText: "It is Apple's newest language and the perfect tool for developing iOS apps."
   },
 ]

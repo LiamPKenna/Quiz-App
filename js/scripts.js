@@ -79,12 +79,24 @@ const cardBuilder = function(questionIndex) {
   if (thisQuestion.answer) {
     done = true;
     return answerBuilder(thisQuestion);
-  } else if (thisQuestion.forkFunction){
+  } else if (thisQuestion.options){
     return forkCardBuilder(thisQuestion);
   } else {
     return yesNoBuilder(thisQuestion);
   }
 }
+
+const forkFunction = function(number) {
+  if (number === 1) {
+    return 7;
+  } else if (number === 2) {
+    return 8;
+  } else if (number === 3) {
+    return 9;
+  } else {
+    return 10;
+  }
+};
 
 
 // USER INTERFACE
@@ -105,7 +117,7 @@ $(document).ready(function() {
   $(".question").on("click", ".fork", function(event) {
     $(".question").text('');
     let forkNumber = parseInt($(event.target).val());
-    $(".question").append(cardBuilder(questions[currentQuestion].forkFunction(forkNumber)));
+    $(".question").append(cardBuilder(forkFunction(forkNumber)));
     currentQuestion = questions[currentQuestion].answerNo;
   });
 
