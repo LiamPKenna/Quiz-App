@@ -1,3 +1,11 @@
+h1 {
+  font-family: 'Viga', sans-serif;
+}
+
+h5 {
+  font-family: 'Electrolize', sans-serif;
+}
+
 .wrap {
   background-color: #6dbbe8;
   border-radius: 10px;
