@@ -10,6 +10,7 @@
   display: block;
   margin: 0 auto;
   background-color: darkgray;
+  padding: 6%;
 }
 
 .questions {
@@ -34,4 +35,11 @@
 
 .second img {
   opacity: 0.5;
+}
+button#yes {
+  float: left;
+}
+
+button#no {
+  float: right;
 }
