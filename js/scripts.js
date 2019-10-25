@@ -29,13 +29,11 @@ const backgroundIncrementer = function() {
 // TEMPLATING
 const answerBuilder = function(answer) {
   const getLogo = function(thisAnswer) {
-    let choice = '';
     if (thisAnswer.answer === "C#") {
-      choice = 'c-sharp';
+      return 'img/c-sharp.png';
     } else {
-      choice = thisAnswer.answer.toLowerCase();
+      return `img/${thisAnswer.answer.toLowerCase()}.png`;
     }
-    return `img/${choice}.png`
   }
   let logo = getLogo(answer);
   return `
