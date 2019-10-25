@@ -34,19 +34,19 @@ const answerBuilder = function(answer) {
     } else {
       return `img/${thisAnswer.answer.toLowerCase()}.png`;
     }
-  }
+  };
   let logo = getLogo(answer);
   return `
   <h2 class="result">${name} should learn ${answer.answer}!</h2>
   <h4>${answer.answerText}</h4>
   <br>
-  <button type="button" class="btn btn-info start"><h2>START OVER</h2></button>
-  <br><br>
   <div class="logo-wrap">
     <img src="${logo}" alt="${answer.answer}" class="logo">
   </div>
+  <br><br>
+  <button type="button" class="btn btn-info start"><h2>START OVER</h2></button>
   `;
-}
+};
 
 const forkCardBuilder = function(thisQuestion) {
   const optionButton = function(option) {
@@ -58,7 +58,7 @@ const forkCardBuilder = function(thisQuestion) {
   <h3>${thisQuestion.question}</h3>
   <br><br>
   ${thisQuestion.options.map(optionButton).join('')}
-  `
+  `;
 }
 
 const yesNoBuilder = function(thisQuestion) {
@@ -70,7 +70,7 @@ const yesNoBuilder = function(thisQuestion) {
   <button id="no" type="button" class="btn btn-info y-n"><h2>NO</h2></button>
   </div>
   `
-}
+};
 
 
 // MAIN LOGIC
@@ -84,7 +84,7 @@ const cardBuilder = function(questionIndex) {
   } else {
     return yesNoBuilder(thisQuestion);
   }
-}
+};
 
 const forkFunction = function(number) {
   if (number === 1) {
