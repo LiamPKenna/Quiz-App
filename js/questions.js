@@ -1,15 +1,21 @@
+/*
+
+Questions and Answers derived from the content found at https://www.learneroo.com/modules/12/nodes/94
+
+*/
+
 const questions = [
   {
     number: 0,
-    question: "Do you want to learn a language with more rules (to prevent errors) rather than more flexibility?",
-    answerYes: 3,
-    answerNo: 2
+    question: "Do you want work for a big company?",
+    answerYes: 11,
+    answerNo: 12
   },
   {
     number: 1,
-    question: "Do you want to start over?",
-    answerYes: 0,
-    answerNo: 0
+    question: "Do you want to learn a language with more rules (to prevent errors) rather than more flexibility?",
+    answerYes: 3,
+    answerNo: 2
   },
   {
     number: 2,
@@ -64,7 +70,7 @@ const questions = [
   {
     number: 6,
     answer: "C#",
-    answerText: "It's a language with many similarities to Java with even more features."
+    answerText: "It's a language with many similarities to Java plus even more features."
   },
   {
     number: 7,
@@ -85,5 +91,23 @@ const questions = [
     number: 10,
     answer: "Ruby",
     answerText: "It is clean, readable and a powerful tool for building webpages and more."
+  },
+  {
+    number: 11,
+    question: "Are you excited about using a language with strict structures and syntax?",
+    answerYes: 3,
+    answerNo: 13
+  },
+  {
+    number: 12,
+    question: "Are you excited about working fast, even if it leads to more errors?",
+    answerYes: 2,
+    answerNo: 1
+  },
+  {
+    number: 13,
+    question: "Are you excited about working fast and flexible, even if it makes it harder to work for a big company?",
+    answerYes: 2,
+    answerNo: 3
   },
 ]
