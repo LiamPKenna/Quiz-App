@@ -13,7 +13,7 @@ const questions = [
   },
   {
     number: 2,
-    question: "What do you want to be able to do?",
+    question: "What do you most want to be able to do?",
     answerFunction: function(number) {
       if (number === 1) {
         return 7;
@@ -31,7 +31,7 @@ const questions = [
         number: 1
       },
       {
-        option: "Create code that runs in the browser and maybe a little sever-sede work",
+        option: "Create code that runs in the browser",
         number: 2
       },
       {

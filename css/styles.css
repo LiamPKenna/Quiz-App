@@ -43,3 +43,8 @@ button#yes {
 button#no {
   float: right;
 }
+
+.btn p {
+  margin-top: 3px;
+  margin-bottom: 0;
+}
