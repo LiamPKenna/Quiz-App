@@ -85,7 +85,7 @@ const questions = [
   {
     number: 9,
     answer: "Python",
-    answerText: "It's a popular app for big data and science with an emphasis on readability."
+    answerText: "It's a popular option for big data and science with an emphasis on readability."
   },
   {
     number: 10,

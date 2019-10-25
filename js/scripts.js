@@ -1,5 +1,22 @@
 var currentQuestion = 0;
+var backgroundColorIndex = 0;
 var name = "";
+
+const backgroundIncrementer = function() {
+  if (backgroundColorIndex === (backgroundColors.length - 1)) {
+    backgroundColorIndex = 0;
+  } else {
+    backgroundColorIndex += 1;
+  }
+}
+
+const backgroundColors = [
+  "#6dbbe8",
+  "#1a4259",
+  "#1a5951",
+  "#54aba0",
+  "#54ab8f"
+]
 
 const optionButton = function(option) {
   return `
@@ -7,12 +24,12 @@ const optionButton = function(option) {
   `;
 };
 
-const getLogo = function(ans) {
+const getLogo = function(answer) {
   let choice = '';
-  if (ans.answer === "C#") {
+  if (answer.answer === "C#") {
     choice = 'c-sharp';
   } else {
-    choice = ans.answer.toLowerCase();
+    choice = answer.answer.toLowerCase();
   }
   return `img/${choice}.png`
 }
@@ -22,7 +39,9 @@ const answerBuilder = function(answer) {
   return `
   <h2>${name} should learn ${answer.answer}!</h2>
   <h4>${answer.answerText}</h4>
+  <br>
   <button type="button" class="btn btn-info start"><h2>START OVER</h2></button>
+  <br><br>
   <div class="logo-wrap">
     <img src="${logo}" alt="${answer.answer}" class="logo">
   </div>
@@ -86,5 +105,11 @@ $(document).ready(function() {
       alert("Please enter your name to continue!");
     }
   });
+
+  $(".question").on("click", ".btn", function() {
+    backgroundIncrementer();
+    console.log("background-color", backgroundColors[backgroundColorIndex]);
+    $("body").css("background-color", backgroundColors[backgroundColorIndex]);
+  })
 
 });
