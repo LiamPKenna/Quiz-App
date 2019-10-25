@@ -2,7 +2,7 @@ var currentQuestion = 0;
 
 const optionButton = function(option) {
   return `
-  <button value="${option.number}" type="button" class="btn btn-info mb-3 fork"><p>${option.option}</p></button>
+  <button value="${option.number}" type="button" class="btn btn-info mb-3 fork">${option.option}</button>
   `;
 };
 
@@ -41,9 +41,17 @@ $(document).ready(function() {
   $(".question").on("click", "#yes", function(event) {
     $(".question").text('');
     $(".question").append(cardBuilder(questions[currentQuestion].answerYes));
+    currentQuestion = questions[currentQuestion].answerYes;
   });
   $(".question").on("click", "#no", function(event) {
     $(".question").text('');
     $(".question").append(cardBuilder(questions[currentQuestion].answerNo));
+    currentQuestion = questions[currentQuestion].answerNo;
+  });
+  $(".question").on("click", ".fork", function(event) {
+    $(".question").text('');
+    let forkNumber = parseInt($(event.target).val());
+    $(".question").append(cardBuilder(questions[currentQuestion].answerFunction(forkNumber)));
+    currentQuestion = questions[currentQuestion].answerNo;
   });
 });
