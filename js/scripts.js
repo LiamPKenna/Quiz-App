@@ -16,7 +16,11 @@ const backgroundColors = [
   "#5cbd9e",
   "#5cbdb7",
   "#54aba0",
-  "#54ab8f"
+  "#54ab8f",
+  "#695cbd",
+  "#8d5cbd",
+  "#bd5c8d",
+  "#bd5c6b"
 ]
 
 const optionButton = function(option) {

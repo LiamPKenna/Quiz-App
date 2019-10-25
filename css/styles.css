@@ -1,9 +1,19 @@
 h1 {
   font-family: 'Viga', sans-serif;
+  font-size: 45px;
 }
 
 h5 {
   font-family: 'Electrolize', sans-serif;
+  font-variant: small-caps;
+  font-size: 30px;
+}
+
+body {
+  background-color: #6dbbe8;
+  background-repeat: no-repeat;
+  background-image: url('../img/blur-code.jpg');
+  background-size: 100% auto;
 }
 
 .wrap {
@@ -20,7 +30,12 @@ h5 {
 .heading {
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.input-div {
+  width: 100%;
 }
 
 .card {
@@ -33,13 +48,6 @@ h5 {
   text-align: center;
 }
 
-.input-div {
-  width: 100%;
-}
-
-.second img {
-  opacity: 0.5;
-}
 button#yes {
   float: left;
 }
@@ -65,13 +73,6 @@ button#no {
   margin-bottom: 100px;
 }
 
-body {
-  background-color: #6dbbe8;
-  background-repeat: no-repeat;
-  background-image: url('../img/blur-code.jpg');
-  background-size: 100% auto;
-}
-
 .logo {
   margin: 0 auto;
   max-height: 150px;
@@ -86,4 +87,13 @@ body {
 
 .result {
   text-align: center;
+}
+
+
+@media (max-width: 700px) {
+
+  .wrap {
+    margin-top: 0;
+  }
+
 }
