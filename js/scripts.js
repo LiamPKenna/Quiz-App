@@ -1,6 +1,7 @@
 var currentQuestion = 0;
 var backgroundColorIndex = 0;
 var name = "";
+var done = false;
 
 const backgroundIncrementer = function() {
   if (backgroundColorIndex === (backgroundColors.length - 1)) {
@@ -12,8 +13,8 @@ const backgroundIncrementer = function() {
 
 const backgroundColors = [
   "#6dbbe8",
-  "#1a4259",
-  "#1a5951",
+  "#5cbd9e",
+  "#5cbdb7",
   "#54aba0",
   "#54ab8f"
 ]
@@ -35,6 +36,7 @@ const getLogo = function(answer) {
 }
 
 const answerBuilder = function(answer) {
+  done = true;
   let logo = getLogo(answer);
   return `
   <h2>${name} should learn ${answer.answer}!</h2>
@@ -93,6 +95,8 @@ $(document).ready(function() {
     currentQuestion = 0;
     $(".question").text('');
     $(".question").append(cardBuilder(currentQuestion));
+    done = false;
+    $(".logo").hide();
   });
 
   $(".question").on("click", ".begin", function() {
@@ -108,8 +112,10 @@ $(document).ready(function() {
 
   $(".question").on("click", ".btn", function() {
     backgroundIncrementer();
-    console.log("background-color", backgroundColors[backgroundColorIndex]);
     $("body").css("background-color", backgroundColors[backgroundColorIndex]);
+    if (done) {
+      $(".logo").fadeIn(1000);
+    }
   })
 
 });
