@@ -1,5 +1,7 @@
 .heading {
   text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .card {
@@ -33,6 +35,14 @@ button#no {
   margin-bottom: 0;
 }
 
-.start, .fork{
+.start, .begin, .fork{
   width: 100%;
+}
+
+#name {
+  margin-bottom: 100px;
+}
+
+body {
+  background-color: #6dbbe8;
 }

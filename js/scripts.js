@@ -1,4 +1,5 @@
 var currentQuestion = 0;
+var name = "";
 
 const optionButton = function(option) {
   return `
@@ -8,7 +9,7 @@ const optionButton = function(option) {
 
 const answerBuilder = function(answer) {
   return `
-  <h2>You should learn ${answer.answer}!</h2>
+  <h2>${name} should learn ${answer.answer}!</h2>
   <br><br>
   <h4>${answer.answerText}</h4>
   <br><br>
@@ -61,6 +62,17 @@ $(document).ready(function() {
     currentQuestion = 0;
     $(".question").text('');
     $(".question").append(cardBuilder(currentQuestion));
+  });
+
+  $(".question").on("click", ".begin", function() {
+    currentQuestion = 0;
+    if ($("#name").val()) {
+      name = $("#name").val();
+      $(".question").text('');
+      $(".question").append(cardBuilder(currentQuestion));
+    } else {
+      alert("Please enter your name to continue!");
+    }
   });
 
 });
