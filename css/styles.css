@@ -1,0 +1,31 @@
+.heading {
+  text-align: center;
+}
+
+.card {
+  max-height: 500px;
+  max-width: 500px;
+  overflow: hidden;
+  display: block;
+}
+
+.questions {
+
+  background-color: black;
+  text-align: center;
+
+}
+
+.carousel-item {
+  margin: 0 auto;
+}
+
+.carousel-inner{
+  margin: 0 auto;
+}
+
+.input-div {
+  width: 100%;
+  background-color: black;
+  border: 3px solid green;
+}
