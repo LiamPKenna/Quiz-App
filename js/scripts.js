@@ -22,7 +22,7 @@ const cardBuilder = function(questionIndex) {
     return `
     <h3>${thisQuestion.question}</h3>
     <br><br>
-    ${thisQuestion.options.map(optionButton(option)).join('')}
+    ${thisQuestion.options.map(optionButton).join('')}
     `;
   } else {
     return `
@@ -38,7 +38,12 @@ const cardBuilder = function(questionIndex) {
 
 
 $(document).ready(function() {
-  $("question").click(function(event) {
-    $(event.target)
+  $(".question").on("click", "#yes", function(event) {
+    $(".question").text('');
+    $(".question").append(cardBuilder(questions[currentQuestion].answerYes));
+  });
+  $(".question").on("click", "#no", function(event) {
+    $(".question").text('');
+    $(".question").append(cardBuilder(questions[currentQuestion].answerNo));
   });
 });
