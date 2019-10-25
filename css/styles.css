@@ -13,24 +13,8 @@
   padding: 6%;
 }
 
-.questions {
-
-  background-color: black;
-  text-align: center;
-
-}
-
-/* .carousel-item {
-
-} */
-
-/* .carousel-inner{
-  margin: 0 auto;
-} */
-
 .input-div {
   width: 100%;
-  background-color: black;
 }
 
 .second img {
@@ -47,4 +31,8 @@ button#no {
 .btn p {
   margin-top: 3px;
   margin-bottom: 0;
+}
+
+.start, .fork{
+  width: 100%;
 }
