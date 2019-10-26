@@ -7,6 +7,7 @@ var quizInfo = {};
 var questionsAndAnswers = [];
 var ready = false;
 
+
 // FOR BACKGROUND COLOR CHANGES
 const backgroundColors = [
   "#6dbbe8",
@@ -26,6 +27,7 @@ const backgroundIncrementer = function() {
   } else {
     backgroundColorIndex += 1;
   }
+  return backgroundColors[backgroundColorIndex];
 };
 
 
@@ -126,8 +128,6 @@ $(document).ready(function() {
     $(".choose-path-modal").modal("hide");
   });
 
-
-
   $(".question").on("click", "#yes", function() {
     $(".question").text('');
     $(".question").append(cardBuilder("yes", null));
@@ -165,9 +165,9 @@ $(document).ready(function() {
   });
 
   $(".question").on("click", ".btn", function() {
-    backgroundIncrementer();
-    $(".wrap").css("background-color", backgroundColors[backgroundColorIndex]);
-    $("body").css("background-color", backgroundColors[backgroundColorIndex]);
+    let newBackground = backgroundIncrementer();
+    $(".wrap").css("background-color", newBackground);
+    $("body").css("background-color", newBackground);
     if (done) {
       $(".logo").fadeIn(1000);
     }
