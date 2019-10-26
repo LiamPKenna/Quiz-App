@@ -80,7 +80,7 @@ const yesNoBuilder = function(thisQuestion) {
 
 // MAIN LOGIC
 const cardBuilder = function(questionIndex) {
-  const thisQuestion = questions[questionIndex];
+  const thisQuestion = questionsAndAnswers[questionIndex];
   if (thisQuestion.answer) {
     done = true;
     return answerBuilder(thisQuestion);
@@ -97,21 +97,21 @@ $(document).ready(function() {
 
   $(".question").on("click", "#yes", function() {
     $(".question").text('');
-    $(".question").append(cardBuilder(questions[currentQuestion].answerYes));
-    currentQuestion = questions[currentQuestion].answerYes;
+    $(".question").append(cardBuilder(questionsAndAnswers[currentQuestion].answerYes));
+    currentQuestion = questionsAndAnswers[currentQuestion].answerYes;
   });
 
   $(".question").on("click", "#no", function() {
     $(".question").text('');
-    $(".question").append(cardBuilder(questions[currentQuestion].answerNo));
-    currentQuestion = questions[currentQuestion].answerNo;
+    $(".question").append(cardBuilder(questionsAndAnswers[currentQuestion].answerNo));
+    currentQuestion = questionsAndAnswers[currentQuestion].answerNo;
   });
 
   $(".question").on("click", ".fork", function(event) {
     $(".question").text('');
     let forkNumber = parseInt($(event.target).val());
     $(".question").append(cardBuilder(forkNumber));
-    currentQuestion = questions[currentQuestion].answerNo;
+    currentQuestion = questionsAndAnswers[currentQuestion].answerNo;
   });
 
   $(".question").on("click", ".start", function() {

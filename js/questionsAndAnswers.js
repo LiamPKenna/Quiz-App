@@ -4,7 +4,7 @@ Questions and Answers derived from the content found at https://www.learneroo.co
 
 */
 
-const questions = [
+const questionsAndAnswers = [
   {
     number: 0,
     question: "Do you want work for a big company?",
