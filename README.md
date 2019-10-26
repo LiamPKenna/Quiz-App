@@ -33,7 +33,7 @@ _HTML, CSS, Bootstrap, jQuery, JavaScript_
 
 ### License
 
-*This software is available under the MIT License*
-*Images are the property of their creators*
+*This software is available under the MIT License |*
+*| Images are the property of their creators*
 
 Copyright (c) 2019 **_Liam Kenna_**
