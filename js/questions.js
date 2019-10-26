@@ -136,4 +136,4 @@ const questions = [
     answerYes: 9,
     answerNo: 17
   },
-]
+];

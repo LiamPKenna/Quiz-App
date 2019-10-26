@@ -23,11 +23,12 @@ const backgroundIncrementer = function() {
   } else {
     backgroundColorIndex += 1;
   }
-}
+};
 
 
 // TEMPLATING
 const answerBuilder = function(answer) {
+
   const getLogo = function(thisAnswer) {
     if (thisAnswer.answer === "C#") {
       return 'img/c-sharp.png';
@@ -35,7 +36,9 @@ const answerBuilder = function(answer) {
       return `img/${thisAnswer.answer.toLowerCase()}.png`;
     }
   };
+
   let logo = getLogo(answer);
+
   return `
   <h2 class="result">${name} should learn ${answer.answer}!</h2>
   <h4>${answer.answerText}</h4>
@@ -49,17 +52,19 @@ const answerBuilder = function(answer) {
 };
 
 const forkCardBuilder = function(thisQuestion) {
+
   const optionButton = function(option) {
     return `
     <button value="${option.number}" type="button" class="btn btn-info mb-3 fork">${option.option}</button>
     `;
   };
+
   return `
   <h3>${thisQuestion.question}</h3>
   <br><br>
   ${thisQuestion.options.map(optionButton).join('')}
   `;
-}
+};
 
 const yesNoBuilder = function(thisQuestion) {
   return `
@@ -69,7 +74,7 @@ const yesNoBuilder = function(thisQuestion) {
   <button id="yes" type="button" class="btn btn-info y-n"><h2>YES</h2></button>
   <button id="no" type="button" class="btn btn-info y-n"><h2>NO</h2></button>
   </div>
-  `
+  `;
 };
 
 
@@ -83,7 +88,7 @@ const cardBuilder = function(questionIndex) {
     return forkCardBuilder(thisQuestion);
   } else {
     return yesNoBuilder(thisQuestion);
-  }
+  };
 };
 
 const forkFunction = function(number) {
