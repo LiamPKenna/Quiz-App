@@ -23,15 +23,15 @@ const questions = [
     options: [
       {
         option: "Work with scripts like Wordpress",
-        number: 1
+        number: 7
       },
       {
         option: "Create code that runs in the browser",
-        number: 2
+        number: 8
       },
       {
         option: "Create websites like AirBNB or Twitter",
-        number: 4
+        number: 10
       },
     ]
   },
@@ -118,15 +118,15 @@ const questions = [
     options: [
       {
         option: "Create full stack apps with a single language",
-        number: 2
+        number: 8
       },
       {
         option: "Use a clear and general purpose language",
-        number: 3
+        number: 9
       },
       {
         option: "Create websites like AirBNB or Twitter",
-        number: 4
+        number: 10
       },
     ]
   },
