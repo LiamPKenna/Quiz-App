@@ -29,7 +29,7 @@ const backgroundIncrementer = function() {
 // TEMPLATING
 const answerBuilder = function(answer) {
 
-  const getLogo = function(thisAnswer) {
+  const getLogoSrc = function(thisAnswer) {
     if (thisAnswer.answer === "C#") {
       return 'img/c-sharp.png';
     } else {
@@ -37,14 +37,14 @@ const answerBuilder = function(answer) {
     }
   };
 
-  let logo = getLogo(answer);
+  let logoSrc = getLogoSrc(answer);
 
   return `
   <h2 class="result">${name} should learn ${answer.answer}!</h2>
   <h4>${answer.answerText}</h4>
   <br>
   <div class="logo-wrap">
-    <img src="${logo}" alt="${answer.answer}" class="logo">
+    <img src="${logoSrc}" alt="${answer.answer}" class="logo">
   </div>
   <br><br>
   <button type="button" class="btn btn-info start"><h2>START OVER</h2></button>
@@ -79,8 +79,21 @@ const yesNoBuilder = function(thisQuestion) {
 
 
 // MAIN LOGIC
-const cardBuilder = function(questionIndex) {
-  const thisQuestion = questionsAndAnswers[questionIndex];
+const getCardIndex = function(yesOrNo, forkNumber) {
+  done = false;
+  if (yesOrNo === "yes") {
+    currentQuestion = questionsAndAnswers[currentQuestion].answerYes;
+  } else if (yesOrNo === "no") {
+    currentQuestion = questionsAndAnswers[currentQuestion].answerNo;
+  } else {
+    currentQuestion = forkNumber;
+  };
+  return null;
+};
+
+const cardBuilder = function(yesOrNo, forkNumber) {
+  getCardIndex(yesOrNo, forkNumber);
+  const thisQuestion = questionsAndAnswers[currentQuestion];
   if (thisQuestion.answer) {
     done = true;
     return answerBuilder(thisQuestion);
@@ -92,42 +105,37 @@ const cardBuilder = function(questionIndex) {
 };
 
 
+
 // USER INTERFACE
 $(document).ready(function() {
 
   $(".question").on("click", "#yes", function() {
     $(".question").text('');
-    $(".question").append(cardBuilder(questionsAndAnswers[currentQuestion].answerYes));
-    currentQuestion = questionsAndAnswers[currentQuestion].answerYes;
+    $(".question").append(cardBuilder("yes", null));
   });
 
   $(".question").on("click", "#no", function() {
     $(".question").text('');
-    $(".question").append(cardBuilder(questionsAndAnswers[currentQuestion].answerNo));
-    currentQuestion = questionsAndAnswers[currentQuestion].answerNo;
+    $(".question").append(cardBuilder("no", null));
   });
 
   $(".question").on("click", ".fork", function(event) {
     $(".question").text('');
     let forkNumber = parseInt($(event.target).val());
-    $(".question").append(cardBuilder(forkNumber));
-    currentQuestion = questionsAndAnswers[currentQuestion].answerNo;
+    $(".question").append(cardBuilder("fork", forkNumber));
   });
 
   $(".question").on("click", ".start", function() {
-    currentQuestion = 0;
     $(".question").text('');
-    $(".question").append(cardBuilder(currentQuestion));
-    done = false;
+    $(".question").append(cardBuilder("restart", 0));
     $(".logo").hide();
   });
 
   $(".question").on("click", ".begin", function() {
-    currentQuestion = 0;
     if ($("#name").val()) {
       name = $("#name").val();
       $(".question").text('');
-      $(".question").append(cardBuilder(currentQuestion));
+      $(".question").append(cardBuilder("begin", 0));
     } else {
       $(".no-name-modal").modal("show");
     }
