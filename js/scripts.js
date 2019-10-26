@@ -119,7 +119,7 @@ const setPath = function(path) {
 $(document).ready(function() {
   $(".choose-path-modal").modal("show");
 
-  $(".choose-path-modal").on("click", ".path", function(event) {
+  $(".path").click(function(event) {
     setPath($(event.target).val());
     $(".jumbotron").text('');
     $(".jumbotron").append(headerBuilder(quizInfo));
