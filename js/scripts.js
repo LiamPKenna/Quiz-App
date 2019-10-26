@@ -82,17 +82,16 @@ const yesNoBuilder = function(thisQuestion) {
 const getCardIndex = function(yesOrNo, forkNumber) {
   done = false;
   if (yesOrNo === "yes") {
-    currentQuestion = questionsAndAnswers[currentQuestion].answerYes;
+    return questionsAndAnswers[currentQuestion].answerYes;
   } else if (yesOrNo === "no") {
-    currentQuestion = questionsAndAnswers[currentQuestion].answerNo;
+    return questionsAndAnswers[currentQuestion].answerNo;
   } else {
-    currentQuestion = forkNumber;
+    return forkNumber;
   };
-  return null;
 };
 
 const cardBuilder = function(yesOrNo, forkNumber) {
-  getCardIndex(yesOrNo, forkNumber);
+  currentQuestion = getCardIndex(yesOrNo, forkNumber);
   const thisQuestion = questionsAndAnswers[currentQuestion];
   if (thisQuestion.answer) {
     done = true;
