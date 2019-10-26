@@ -129,7 +129,7 @@ $(document).ready(function() {
       $(".question").text('');
       $(".question").append(cardBuilder(currentQuestion));
     } else {
-      alert("Please enter your name to continue!");
+      $(".no-name-modal").modal("show");
     }
   });
 
