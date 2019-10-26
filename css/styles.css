@@ -37,6 +37,11 @@ button.fork {
   width: 100%;
 }
 
+.modal-content {
+  text-align: center;
+  padding: 20px;
+}
+
 .input-div {
   width: 100%;
 }
@@ -84,7 +89,7 @@ button#no {
 .logo-wrap {
   text-align: center;
   width: 100%;
-  height: 100%;
+  height: 150px;
 }
 
 .result {
