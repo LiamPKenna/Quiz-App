@@ -68,7 +68,7 @@ const careerQAndA = [
         number: 15
       },
       {
-        option: "Structure and lack of abiguity",
+        option: "Structure and lack of ambiguity",
         number: 16
       },
       {
@@ -121,7 +121,7 @@ const careerQAndA = [
   },
   {
     number: 16,
-    answer: "be a Writer of Journalist",
+    answer: "be a Writer / Journalist",
     answerText: "You'll weave words together and hopefully make enough to not die doing it.",
     imageSrc: "img/writer.png"
   },
@@ -140,7 +140,7 @@ const careerQAndA = [
   {
     number: 19,
     answer: "BUY A SUIT",
-    answerText: "The roles that best fit you may require some growing up.",
+    answerText: "The roles that best fit you may require some growing up. There is no time like the present to get started.",
     imageSrc: "img/suit.png"
   },
 ];
