@@ -9,7 +9,7 @@ h5 {
 
 body {
   background-color: #6dbbe8;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-image: url('../img/blur-code.jpg');
   background-size: 100% auto;
 }
