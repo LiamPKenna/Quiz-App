@@ -3,6 +3,9 @@ var currentQuestion = 0;
 var backgroundColorIndex = 0;
 var name = "";
 var done = false;
+var quizInfo = {};
+var questionsAndAnswers = [];
+var ready = false;
 
 // FOR BACKGROUND COLOR CHANGES
 const backgroundColors = [
@@ -36,7 +39,7 @@ const headerBuilder = function(quizInfo) {
 
 const answerBuilder = function(answer) {
   return `
-    <h2 class="result">${name} should learn ${answer.answer}!</h2>
+    <h2 class="result">${name} should ${answer.answer}!</h2>
     <h4>${answer.answerText}</h4>
     <br>
     <div class="logo-wrap">
@@ -99,12 +102,31 @@ const cardBuilder = function(yesOrNo, forkNumber) {
   };
 };
 
+const setPath = function(path) {
+  if (path === "language") {
+    quizInfo = languageInfo;
+    questionsAndAnswers = languageQAndA;
+  } else {
+    quizInfo = careerInfo;
+    questionsAndAnswers = careerQAndA;
+  }
+  ready = true;
+  return null;
+};
 
 
 // USER INTERFACE
 $(document).ready(function() {
-  $(".jumbotron").text("");
-  $(".jumbotron").append(headerBuilder(quizInfo));
+  $(".choose-path-modal").modal("show");
+
+  $(".choose-path-modal").on("click", ".path", function(event) {
+    setPath($(event.target).val());
+    $(".jumbotron").text('');
+    $(".jumbotron").append(headerBuilder(quizInfo));
+    $(".choose-path-modal").modal("hide");
+  });
+
+
 
   $(".question").on("click", "#yes", function() {
     $(".question").text('');
@@ -129,13 +151,17 @@ $(document).ready(function() {
   });
 
   $(".question").on("click", ".begin", function() {
-    if ($("#name").val()) {
-      name = $("#name").val();
-      $(".question").text('');
-      $(".question").append(cardBuilder("begin", 0));
+    if (ready) {
+      if ($("#name").val()) {
+        name = $("#name").val();
+        $(".question").text('');
+        $(".question").append(cardBuilder("begin", 0));
+      } else {
+        $(".no-name-modal").modal("show");
+      };
     } else {
-      $(".no-name-modal").modal("show");
-    }
+      $(".choose-path-modal").modal("show");
+    };
   });
 
   $(".question").on("click", ".btn", function() {
