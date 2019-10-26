@@ -27,27 +27,23 @@ const backgroundIncrementer = function() {
 
 
 // TEMPLATING
-const answerBuilder = function(answer) {
-
-  const getLogoSrc = function(thisAnswer) {
-    if (thisAnswer.answer === "C#") {
-      return 'img/c-sharp.png';
-    } else {
-      return `img/${thisAnswer.answer.toLowerCase()}.png`;
-    }
-  };
-
-  let logoSrc = getLogoSrc(answer);
-
+const headerBuilder = function(quizInfo) {
   return `
-  <h2 class="result">${name} should learn ${answer.answer}!</h2>
-  <h4>${answer.answerText}</h4>
-  <br>
-  <div class="logo-wrap">
-    <img src="${logoSrc}" alt="${answer.answer}" class="logo">
-  </div>
-  <br><br>
-  <button type="button" class="btn btn-info start"><h2>START OVER</h2></button>
+    <h1>${quizInfo.title}</h1>
+    <h5>${quizInfo.subTitle}</h5>
+  `
+}
+
+const answerBuilder = function(answer) {
+  return `
+    <h2 class="result">${name} should learn ${answer.answer}!</h2>
+    <h4>${answer.answerText}</h4>
+    <br>
+    <div class="logo-wrap">
+      <img src="${answer.imageSrc}" alt="${answer.answer}" class="logo">
+    </div>
+    <br><br>
+    <button type="button" class="btn btn-info start"><h2>START OVER</h2></button>
   `;
 };
 
@@ -55,25 +51,25 @@ const forkCardBuilder = function(thisQuestion) {
 
   const optionButton = function(option) {
     return `
-    <button value="${option.number}" type="button" class="btn btn-info mb-3 fork">${option.option}</button>
+      <button value="${option.number}" type="button" class="btn btn-info mb-3 fork">${option.option}</button>
     `;
   };
 
   return `
-  <h3>${thisQuestion.question}</h3>
-  <br><br>
-  ${thisQuestion.options.map(optionButton).join('')}
+    <h3>${thisQuestion.question}</h3>
+    <br><br>
+    ${thisQuestion.options.map(optionButton).join('')}
   `;
 };
 
 const yesNoBuilder = function(thisQuestion) {
   return `
-  <h3>${thisQuestion.question}</h3>
-  <br><br>
-  <div class="y-n-wrap">
-  <button id="yes" type="button" class="btn btn-info y-n"><h2>YES</h2></button>
-  <button id="no" type="button" class="btn btn-info y-n"><h2>NO</h2></button>
-  </div>
+    <h3>${thisQuestion.question}</h3>
+    <br><br>
+    <div class="y-n-wrap">
+    <button id="yes" type="button" class="btn btn-info y-n"><h2>YES</h2></button>
+    <button id="no" type="button" class="btn btn-info y-n"><h2>NO</h2></button>
+    </div>
   `;
 };
 
@@ -107,6 +103,8 @@ const cardBuilder = function(yesOrNo, forkNumber) {
 
 // USER INTERFACE
 $(document).ready(function() {
+  $(".jumbotron").text("");
+  $(".jumbotron").append(headerBuilder(quizInfo));
 
   $(".question").on("click", "#yes", function() {
     $(".question").text('');
