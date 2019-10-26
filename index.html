@@ -7,31 +7,43 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
     <script src="js/bootstrap.js" type="text/javascript"></script>
-    <script src="js/questionsAndAnswers.js" type="text/javascript"></script>
+    <script src="js/career.js" type="text/javascript"></script>
+    <script src="js/language.js" type="text/javascript"></script>
     <script src="js/scripts.js" type="text/javascript"></script>
-    <title>Language Selector</title>
+    <title>Quiz Whiz</title>
   </head>
   <body>
     <div class="container wrap">
       <div class="container heading">
         <div class="jumbotron bg-secondary text-light">
-          <h1>Find Your Language</h1>
-          <h5>Programming Path Picker</h5>
+          <h1>Quiz Whiz</h1>
+          <h5>Anawers To Your Biggest Questions!</h5>
         </div>
       </div>
       <div class="container input-div">
         <div class="card question bg-secondary text-light">
           <h3>Please enter your name below and we can get started!</h3>
           <br><br>
-          <input id="name" class="form-control form-control-lg" type="text" placeholder="Your Name">
+          <input id="name" class="form-control form-control-lg text-center" type="text" placeholder="Your Name">
           <button type="button" class="btn btn-info begin"><h2>BEGIN</h2></button>
         </div>
       </div>
     </div>
     <div class="no-name-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="noNameAlertModal" aria-hidden="true">
-      <div class="modal-dialog ">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <h2>PLEASE ENTER YOUR NAME <br>TO CONTINUE!</h2>
+        </div>
+      </div>
+    </div>
+    <div class="choose-path-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="choosePathModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <h2>CHOOSE YOUR QUIZ!</h2>
+          <br>
+          <button class="path btn btn-danger" type="button" value="language">Find your Programming Language</button>
+          <br>
+          <button class="path btn btn-danger" type="button" value="career">Find your Career</button>
         </div>
       </div>
     </div>

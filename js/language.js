@@ -4,7 +4,12 @@ Questions and Answers derived from the content found at https://www.learneroo.co
 
 */
 
-const questionsAndAnswers = [
+const languageInfo = {
+  title: "Find Your Language",
+  subTitle: "Programming Path Picker"
+};
+
+const languageQAndA = [
   {
     number: 0,
     question: "Do you want work for a big company?",
@@ -49,33 +54,39 @@ const questionsAndAnswers = [
   },
   {
     number: 5,
-    answer: "Java",
-    answerText: "It's a language that can be run 'anywhere' and is the language of Android."
+    answer: "learn Java",
+    answerText: "It's a language that can be run 'anywhere' and is the language of Android.",
+    imageSrc: "img/java.png"
   },
   {
     number: 6,
-    answer: "C#",
-    answerText: "It's a language with many similarities to Java plus even more features."
+    answer: "learn C#",
+    answerText: "It's a language with many similarities to Java plus even more features.",
+    imageSrc: "img/c-sharp.png"
   },
   {
     number: 7,
-    answer: "PHP",
-    answerText: "It was all the rage in the 90's and still has many popular scripts."
+    answer: "learn PHP",
+    answerText: "It was all the rage in the 90's and still has many popular scripts.",
+    imageSrc: "img/php.png"
   },
   {
     number: 8,
-    answer: "JavaScript",
-    answerText: "It's run all over the place and is the native language of the web."
+    answer: "learn JavaScript",
+    answerText: "It's run all over the place and is the native language of the web.",
+    imageSrc: "img/javascript.png"
   },
   {
     number: 9,
-    answer: "Python",
-    answerText: "It's a popular option for big data and science with an emphasis on readability."
+    answer: "learn Python",
+    answerText: "It's a popular option for big data and science with an emphasis on readability.",
+    imageSrc: "img/python.png"
   },
   {
     number: 10,
-    answer: "Ruby",
-    answerText: "It is clean, readable and a powerful tool for building webpages and more."
+    answer: "learn Ruby",
+    answerText: "It is clean, readable and a powerful tool for building webpages and more.",
+    imageSrc: "img/ruby.png"
   },
   {
     number: 11,
@@ -103,8 +114,9 @@ const questionsAndAnswers = [
   },
   {
     number: 15,
-    answer: "Swift",
-    answerText: "It is Apple's newest language and the perfect tool for developing iOS apps."
+    answer: "learn Swift",
+    answerText: "It is Apple's newest language and the perfect tool for developing iOS apps.",
+    imageSrc: "img/swift.png"
   },
   {
     number: 16,
