@@ -22,7 +22,8 @@ const backgroundColors = [
 ];
 
 const backgroundIncrementor = function() {
-  backgroundColorIndex = (backgroundColorIndex === (backgroundColors.length - 1)) ?
+  backgroundColorIndex =
+    (backgroundColorIndex === (backgroundColors.length - 1)) ?
     0 :
     backgroundColorIndex += 1;
   return backgroundColors[backgroundColorIndex];
