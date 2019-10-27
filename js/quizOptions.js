@@ -1,12 +1,12 @@
-const options = [
+const quizOptions = [
   {
     name: "language",
     buttonText: "Find your Programming Language",
-    scriptSrc: "js/language.js"
+    number: 0
   },
   {
     name: "career",
     buttonText: "Find your Career",
-    scriptSrc: "js/language.js"
+    number: 1
   }
 ];
