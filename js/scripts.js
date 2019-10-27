@@ -21,12 +21,10 @@ const backgroundColors = [
   "#bd5c6b"
 ];
 
-const backgroundIncrementer = function() {
-  if (backgroundColorIndex === (backgroundColors.length - 1)) {
-    backgroundColorIndex = 0;
-  } else {
+const backgroundIncrementor = function() {
+  backgroundColorIndex = (backgroundColorIndex === (backgroundColors.length - 1)) ?
+    0 :
     backgroundColorIndex += 1;
-  }
   return backgroundColors[backgroundColorIndex];
 };
 
@@ -63,7 +61,7 @@ const answerBuilder = function(answer) {
 
 const forkCardBuilder = function(thisQuestion) {
 
-  const optionButton = function(option) {
+  const forkButton = function(option) {
     return `
       <button value="${option.number}" type="button" class="btn btn-info mb-3 fork">${option.option}</button>
     `;
@@ -72,7 +70,7 @@ const forkCardBuilder = function(thisQuestion) {
   return `
     <h3>${thisQuestion.question}</h3>
     <br><br>
-    ${thisQuestion.options.map(optionButton).join('')}
+    ${thisQuestion.options.map(forkButton).join('')}
   `;
 };
 
@@ -171,10 +169,13 @@ $(document).ready(function() {
     };
   });
 
+  // VISUAL EFFECTS
   $(".question").on("click", ".btn", function() {
-    let newBackground = backgroundIncrementer();
+    // Background color changes
+    let newBackground = backgroundIncrementor();
     $(".wrap").css("background-color", newBackground);
     $("body").css("background-color", newBackground);
+    // Adds fadeIn to image on answer card
     if (done) {
       $(".logo").fadeIn(1000);
     }
