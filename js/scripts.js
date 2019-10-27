@@ -21,17 +21,25 @@ const backgroundColors = [
   "#bd5c6b"
 ];
 
-const backgroundIncrementer = function() {
-  if (backgroundColorIndex === (backgroundColors.length - 1)) {
-    backgroundColorIndex = 0;
-  } else {
+const backgroundIncrementor = function() {
+  backgroundColorIndex =
+    (backgroundColorIndex === (backgroundColors.length - 1)) ?
+    0 :
     backgroundColorIndex += 1;
-  }
   return backgroundColors[backgroundColorIndex];
 };
 
 
 // TEMPLATING
+const quizOptionButtonBuilder = function(quizOptions) {
+  const quizOptionButton = function(quizOption) {
+    return `
+      <button class="path btn btn-danger" type="button" value="${quizOption.number}">${quizOption.buttonText}</button>
+    `;
+  };
+  return quizOptions.map(quizOptionButton).join('<br>');
+}
+
 const headerBuilder = function(quizInfo) {
   return `
     <h1>${quizInfo.title}</h1>
@@ -41,7 +49,7 @@ const headerBuilder = function(quizInfo) {
 
 const answerBuilder = function(answer) {
   return `
-    <h2 class="result">${name} should ${answer.answer}!</h2>
+    <h2 class="result">${name} ${answer.answer}!</h2>
     <h4>${answer.answerText}</h4>
     <br>
     <div class="logo-wrap">
@@ -54,7 +62,7 @@ const answerBuilder = function(answer) {
 
 const forkCardBuilder = function(thisQuestion) {
 
-  const optionButton = function(option) {
+  const forkButton = function(option) {
     return `
       <button value="${option.number}" type="button" class="btn btn-info mb-3 fork">${option.option}</button>
     `;
@@ -63,7 +71,7 @@ const forkCardBuilder = function(thisQuestion) {
   return `
     <h3>${thisQuestion.question}</h3>
     <br><br>
-    ${thisQuestion.options.map(optionButton).join('')}
+    ${thisQuestion.options.map(forkButton).join('')}
   `;
 };
 
@@ -105,13 +113,9 @@ const cardBuilder = function(yesOrNo, forkNumber) {
 };
 
 const setPath = function(path) {
-  if (path === "language") {
-    quizInfo = languageInfo;
-    questionsAndAnswers = languageQAndA;
-  } else {
-    quizInfo = careerInfo;
-    questionsAndAnswers = careerQAndA;
-  }
+  let quizName = quizOptions[path].name;
+  quizInfo = eval(`${quizName}Info`);
+  questionsAndAnswers = eval(`${quizName}QAndA`);
   ready = true;
   return null;
 };
@@ -119,10 +123,12 @@ const setPath = function(path) {
 
 // USER INTERFACE
 $(document).ready(function() {
+  $(".quiz-options").append(quizOptionButtonBuilder(quizOptions));
   $(".choose-path-modal").modal("show");
 
   $(".path").click(function(event) {
-    setPath($(event.target).val());
+    let path = parseInt($(event.target).val());
+    setPath(path);
     $(".jumbotron").text('');
     $(".jumbotron").append(headerBuilder(quizInfo));
     $(".choose-path-modal").modal("hide");
@@ -164,10 +170,13 @@ $(document).ready(function() {
     };
   });
 
+  // VISUAL EFFECTS
   $(".question").on("click", ".btn", function() {
-    let newBackground = backgroundIncrementer();
+    // Background color changes
+    let newBackground = backgroundIncrementor();
     $(".wrap").css("background-color", newBackground);
     $("body").css("background-color", newBackground);
+    // Adds fadeIn to image on answer card
     if (done) {
       $(".logo").fadeIn(1000);
     }

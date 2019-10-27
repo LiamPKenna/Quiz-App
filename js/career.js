@@ -79,67 +79,67 @@ const careerQAndA = [
   },
   {
     number: 9,
-    answer: "be a Legal Consultant",
+    answer: "should be a Legal Consultant",
     answerText: "You'll have a bright future threatening to sue everyone.",
     imageSrc: "img/legal.png"
   },
   {
     number: 10,
-    answer: "go into Data analysis",
+    answer: "should go into Data analysis",
     answerText: "You'll crunch numbers into useful information for a living.",
     imageSrc: "img/data.png"
   },
   {
     number: 11,
-    answer: "go into Sales",
+    answer: "should go into Sales",
     answerText: "Your willingness to sell anything and everything may make you rich.",
     imageSrc: "img/sales.png"
   },
   {
     number: 12,
-    answer: "enter Finance",
+    answer: "should enter Finance",
     answerText: "Your love of $$$ will make you enjoy the work, even if it's other people's money.",
     imageSrc: "img/finance.png"
   },
   {
     number: 13,
-    answer: "be a Designer",
+    answer: "should be a Designer",
     answerText: "Your artsy nature and love of creative things could be your career.",
     imageSrc: "img/designer.png"
   },
   {
     number: 14,
-    answer: "be an Entrepreneur",
+    answer: "should be an Entrepreneur",
     answerText: "You'll risk finacial ruin for a shot at the big time.",
     imageSrc: "img/entrepreneur.png"
   },
   {
     number: 15,
-    answer: "be a Teacher",
+    answer: "should be a Teacher",
     answerText: "You'll shape the minds of future generations while barely scraping by.",
     imageSrc: "img/teacher.png"
   },
   {
     number: 16,
-    answer: "be a Writer / Journalist",
+    answer: "should be a Writer / Journalist",
     answerText: "You'll weave words together and hopefully make enough to not die doing it.",
     imageSrc: "img/writer.png"
   },
   {
     number: 17,
-    answer: "do Digital Marketing",
+    answer: "should do Digital Marketing",
     answerText: "It's the closest thing to checking Twitter for a living.",
     imageSrc: "img/digital.png"
   },
   {
     number: 18,
-    answer: "be a Developer",
+    answer: "should be a Developer",
     answerText: "You'll basically be hacking the Matrix every day.",
     imageSrc: "img/developer.png"
   },
   {
     number: 19,
-    answer: "BUY A SUIT",
+    answer: "should BUY A SUIT",
     answerText: "The roles that best fit you may require some growing up. There is no time like the present to get started.",
     imageSrc: "img/suit.png"
   },

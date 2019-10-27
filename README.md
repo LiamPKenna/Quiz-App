@@ -12,10 +12,12 @@ _This site is a simple web application that asks users to input their name and a
 
 * _This site can be viewed in it's current form at https://LiamPKenna.github.io/wk2/_
 * _To use with your own questions/answers/images:_
-  * _Format your data follow the style of the included examples_
+  * _Format your data to follow the style of the included examples_
   * _Place your images in the img folder._
-  * _Change the value and text for the buttons inside the modal on the bottom of index.html_
-  * _Update the setPath function in scripts.js to load your data objects_
+  * _Add your quiz's information to the quizOptions.js file (or replace existing quiz options)_
+  * _Add a script tag to the head of index.html to load your quiz file_
+* _This program uses numbers matching a data point's index to function_
+  * _Make sure that any changes in position to a question, answer, or quiz option are reflected in their number value (and in any other cards that point at them)_
 
 _To explore the source code, feel free to browse on github or clone to your local machine_
 
