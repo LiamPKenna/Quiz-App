@@ -54,37 +54,37 @@ const languageQAndA = [
   },
   {
     number: 5,
-    answer: "learn Java",
+    answer: "should learn Java",
     answerText: "It's a language that can be run 'anywhere' and is the language of Android.",
     imageSrc: "img/java.png"
   },
   {
     number: 6,
-    answer: "learn C#",
+    answer: "should learn C#",
     answerText: "It's a language with many similarities to Java plus even more features.",
     imageSrc: "img/c-sharp.png"
   },
   {
     number: 7,
-    answer: "learn PHP",
+    answer: "should learn PHP",
     answerText: "It was all the rage in the 90's and still has many popular scripts.",
     imageSrc: "img/php.png"
   },
   {
     number: 8,
-    answer: "learn JavaScript",
+    answer: "should learn JavaScript",
     answerText: "It's run all over the place and is the native language of the web.",
     imageSrc: "img/javascript.png"
   },
   {
     number: 9,
-    answer: "learn Python",
+    answer: "should learn Python",
     answerText: "It's a popular option for big data and science with an emphasis on readability.",
     imageSrc: "img/python.png"
   },
   {
     number: 10,
-    answer: "learn Ruby",
+    answer: "should learn Ruby",
     answerText: "It is clean, readable and a powerful tool for building webpages and more.",
     imageSrc: "img/ruby.png"
   },
@@ -114,7 +114,7 @@ const languageQAndA = [
   },
   {
     number: 15,
-    answer: "learn Swift",
+    answer: "should learn Swift",
     answerText: "It is Apple's newest language and the perfect tool for developing iOS apps.",
     imageSrc: "img/swift.png"
   },

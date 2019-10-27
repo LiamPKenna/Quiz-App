@@ -50,7 +50,7 @@ const headerBuilder = function(quizInfo) {
 
 const answerBuilder = function(answer) {
   return `
-    <h2 class="result">${name} should ${answer.answer}!</h2>
+    <h2 class="result">${name} ${answer.answer}!</h2>
     <h4>${answer.answerText}</h4>
     <br>
     <div class="logo-wrap">
