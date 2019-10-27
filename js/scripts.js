@@ -32,6 +32,15 @@ const backgroundIncrementer = function() {
 
 
 // TEMPLATING
+const quizOptionButtonBuilder = function(quizOptions) {
+  const quizOptionButton = function(quizOption) {
+    return `
+      <button class="path btn btn-danger" type="button" value="${quizOption.number}">${quizOption.buttonText}</button>
+    `;
+  };
+  return quizOptions.map(quizOptionButton).join('<br>');
+}
+
 const headerBuilder = function(quizInfo) {
   return `
     <h1>${quizInfo.title}</h1>
@@ -105,13 +114,9 @@ const cardBuilder = function(yesOrNo, forkNumber) {
 };
 
 const setPath = function(path) {
-  if (path === "language") {
-    quizInfo = languageInfo;
-    questionsAndAnswers = languageQAndA;
-  } else {
-    quizInfo = careerInfo;
-    questionsAndAnswers = careerQAndA;
-  }
+  let quizName = quizOptions[path].name;
+  quizInfo = eval(`${quizName}Info`);
+  questionsAndAnswers = eval(`${quizName}QAndA`);
   ready = true;
   return null;
 };
@@ -119,10 +124,12 @@ const setPath = function(path) {
 
 // USER INTERFACE
 $(document).ready(function() {
+  $(".quiz-options").append(quizOptionButtonBuilder(quizOptions));
   $(".choose-path-modal").modal("show");
 
   $(".path").click(function(event) {
-    setPath($(event.target).val());
+    let path = parseInt($(event.target).val());
+    setPath(path);
     $(".jumbotron").text('');
     $(".jumbotron").append(headerBuilder(quizInfo));
     $(".choose-path-modal").modal("hide");
