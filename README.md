@@ -10,7 +10,7 @@ _This site is a simple web application that asks users to input their name and a
 
 ## Setup/Installation Requirements
 
-* _This site can be viewed in it's current form at https://LiamPKenna.github.io/wk2/_
+* _This site can be viewed in it's current form at https://LiamPKenna.github.io/Quiz-App/_
 * _To use with your own questions/answers/images:_
   * _Format your data to follow the style of the included examples_
   * _Place your images in the img folder._
